@@ -126,6 +126,7 @@ dependencies:
       source:
         type: none
         url: ''
+kf5_deps:
   - akonadi:
       build:
         buildsystem: cmake
