@@ -24,15 +24,16 @@ node('linux') {
 
 
     currentBuild.result = "SUCCESS"
-    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/15 * * * *')])])
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '2')), disableConcurrentBuilds(), pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/15 * * * *')])])
 
     try {
 
         stage( 'Checkout' ) {
             checkout scm
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
-            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'appimage-template']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/appimage-packages/appimage-template']]])
-
+            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'appimage-template'],  [$class: 'IgnoreNotifyCommit']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/appimage-packages/appimage-template']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
+            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kmail']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/kmail']]])
        }
         stage( 'Setup' ) {
             sh 'bundle install'
@@ -41,9 +42,9 @@ node('linux') {
         stage( 'Build' ) {
             sh 'bundle exec deploy.rb'
        }
-        stage('Copy Artifacts') {
-            step([$class: 'S3BucketPublisher', dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'ds9-apps', excludedFile: '', flatten: true, gzipFiles: false, keepForever: false, managedArtifacts: true, noUploadOnFailure: true, \
-            selectedRegion: 'eu-central-1', showDirectlyInBrowser: true, sourceFile: 'appimage/*', storageClass: 'STANDARD', uploadFromSlave: true, useServerSideEncryption: false]], profileName: 'ds9-apps', userMetadata: []])
+       stage('Copy Artifacts') {
+          step([$class: 'S3BucketPublisher', dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'ds9-apps', excludedFile: '', flatten: true, gzipFiles: false, keepForever: false, managedArtifacts: true, noUploadOnFailure: true, \
+          selectedRegion: 'eu-central-1', showDirectlyInBrowser: true, sourceFile: 'appimage/*', storageClass: 'STANDARD', uploadFromSlave: true, useServerSideEncryption: false]], profileName: 'ds9-apps', userMetadata: []])
        }
        stage('Tests') {
             step([$class: 'LogParserPublisher', failBuildOnError: true, projectRulePath: 'appimage-template/parser.rules', showGraphs: true, unstableOnWarning: true, useProjectRule: true])

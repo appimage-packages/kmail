@@ -115,6 +115,7 @@ frameworks:
     - kpty
     - attica
     - knewstuff
+    - kitemmodels
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
