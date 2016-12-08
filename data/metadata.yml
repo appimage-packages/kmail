@@ -116,6 +116,7 @@ frameworks:
     - attica
     - knewstuff
     - kitemmodels
+    - kdesignerplugin
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
@@ -138,3 +139,11 @@ kf5_deps:
       source:
         type: git
         url: 'http://anongit.kde.org/akonadi'
+  - messagelib:
+      build:
+        buildsystem: cmake
+        buildoptions: ''
+      depname: messagelib
+      source:
+        type: git
+        url: 'http://anongit.kde.org/messagelib'
