@@ -77,6 +77,7 @@ packages:
   - flex
   - bison
   - libxslt1-dev
+  - libacl1-dev
   #app specifc
   - xsltproc
 frameworks:
@@ -107,10 +108,11 @@ frameworks:
     - solid
     - kbookmarks
     - kjobwidgets
-    - kio
+    - gpgmepp
+    - kwallet
     - phonon
     - knotifications
-    - kwallet
+    - kio
     - kparts
     - kpty
     - attica
@@ -133,3 +135,11 @@ dependencies:
       source:
         type: none
         url: ''
+  - gpgme:
+      build:
+        buildsystem: make
+        buildoptions: ''
+      depname: gpgme
+      source:
+        type: git
+        url: 'git://git.gnupg.org/gpgme.git'
