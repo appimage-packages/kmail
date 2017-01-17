@@ -41,6 +41,7 @@ frameworks:
     - attica
     - knewstuff
     - kitemmodels
+    - kplotting
     - kdesignerplugin
     - kmime
     - messagelib
