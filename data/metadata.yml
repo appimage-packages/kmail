@@ -42,6 +42,7 @@ frameworks:
     - knewstuff
     - kitemmodels
     - kplotting
+    - kdewebkit
     - kdesignerplugin
     - kmime
     - messagelib
