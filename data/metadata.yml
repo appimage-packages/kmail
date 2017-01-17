@@ -50,6 +50,7 @@ frameworks:
     - akonadi-mime
     - akonadi-notes
     - kcontacts
+    - akonadi-contacts
     - kdepim-apps-libs
     - messagelib
 type: git
