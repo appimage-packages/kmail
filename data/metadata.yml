@@ -45,6 +45,7 @@ frameworks:
     - kdewebkit
     - kdesignerplugin
     - kmime
+    - syntax-highlighting
     - messagelib
     - akonadi
 type: git
