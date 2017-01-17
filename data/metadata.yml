@@ -49,6 +49,7 @@ frameworks:
     - akonadi
     - akonadi-mime
     - akonadi-notes
+    - kcontacts
     - messagelib
 type: git
 url: http://anongit.kde.org/kmail
