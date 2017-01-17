@@ -47,6 +47,7 @@ frameworks:
     - kmime
     - syntax-highlighting
     - akonadi
+    - akonadi-mime
     - messagelib
 type: git
 url: http://anongit.kde.org/kmail
