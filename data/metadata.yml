@@ -46,8 +46,8 @@ frameworks:
     - kdesignerplugin
     - kmime
     - syntax-highlighting
-    - messagelib
     - akonadi
+    - messagelib
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
