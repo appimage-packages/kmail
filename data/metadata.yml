@@ -55,6 +55,7 @@ frameworks:
     - grantleetheme
     - libkleo
     - kimap
+    - kpackage
     - kdeclarative
     - kcmutils
     - libkdepim
