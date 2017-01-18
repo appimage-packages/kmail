@@ -58,6 +58,7 @@ frameworks:
     - kpackage
     - kdeclarative
     - kcmutils
+    - kldap
     - libkdepim
     - pimcommon
     - kdepim-apps-libs
