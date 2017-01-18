@@ -55,6 +55,7 @@ frameworks:
     - grantleetheme
     - libkleo
     - kimap
+    - libkdepim
     - pimcommon
     - kdepim-apps-libs
     - messagelib
