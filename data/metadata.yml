@@ -53,6 +53,7 @@ frameworks:
     - akonadi-contacts
     - grantleetheme
     - libkleo
+    - kimap
     - pimcommon
     - kdepim-apps-libs
     - messagelib
