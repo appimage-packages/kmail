@@ -53,6 +53,7 @@ frameworks:
     - akonadi-contacts
     - grantleetheme
     - libkleo
+    - pimcommon
     - kdepim-apps-libs
     - messagelib
 type: git
