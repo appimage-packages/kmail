@@ -5,6 +5,8 @@ packages:
   - xsltproc
   - libsasl2-dev
   - libldap2-dev
+  - fonts-noto
+  - fonts-hack-otf
 frameworks:
   build_kf5: true
   frameworks:
@@ -61,6 +63,8 @@ frameworks:
     - kcmutils
     - kldap
     - kwayland
+    - kdeclarative
+    - breeze
     - plasma-integration
     - krunner
     - akonadi-search
