@@ -60,6 +60,7 @@ frameworks:
     - kdeclarative
     - kcmutils
     - kldap
+    - krunner
     - akonadi-search
     - libkdepim
     - pimcommon
