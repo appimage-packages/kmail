@@ -85,11 +85,11 @@ dependencies:
       source:
         type: none
         url: ''
-  - hack-font:
-      build:
-        buildsystem: custom
-        buildoptions: 'cp *.ttf /opt/usr/share/fonts/'
-      depname: 'hack-font'
-      source:
-        type: zip
-        url: 'https://github.com/chrissimpkins/Hack/releases/download/v2.020/Hack-v2_020-ttf.zip hack-font'
+  # - hack-font:
+  #     build:
+  #       buildsystem: custom
+  #       buildoptions: 'cp *.ttf /opt/usr/share/fonts/'
+  #     depname: 'hack-font'
+  #     source:
+  #       type: zip
+  #       url: 'https://github.com/chrissimpkins/Hack/releases/download/v2.020/Hack-v2_020-ttf.zip hack-font'
