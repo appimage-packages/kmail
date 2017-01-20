@@ -37,6 +37,7 @@ frameworks:
     - kjobwidgets
     - gpgmepp
     - phonon
+    - phonon-gstreamer
     - knotifications
     - kwallet
     - kio
@@ -65,7 +66,7 @@ frameworks:
     - kwayland
     - kdecoration
     - breeze
-    - plasma-integration
+    - plasma-framework
     - krunner
     - akonadi-search
     - libkdepim
