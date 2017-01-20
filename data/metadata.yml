@@ -88,8 +88,8 @@ dependencies:
   - cpan:
       build:
         buildsystem: custom
-        buildoptions: 'cp * /opt/usr/share/fonts/'
-      depname: Hack-v2_020-ttf
+        buildoptions: 'cp *.ttf /opt/usr/share/fonts/'
+      depname: ''
       source:
         type: zip
         url: 'https://github.com/chrissimpkins/Hack/releases/download/v2.020/Hack-v2_020-ttf.zip'
