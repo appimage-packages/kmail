@@ -68,6 +68,7 @@ frameworks:
     - breeze
     - kactivities
     - plasma-framework
+    - threadweaver
     - krunner
     - akonadi-search
     - libkdepim
