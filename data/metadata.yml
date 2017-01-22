@@ -7,6 +7,8 @@ packages:
   - libldap2-dev
   - fonts-noto
   - unzip
+  - libical-dev
+  - libxapian-dev
 frameworks:
   build_kf5: true
   frameworks:
@@ -70,6 +72,7 @@ frameworks:
     - plasma-framework
     - threadweaver
     - krunner
+    - kcalcore
     - akonadi-search
     - libkdepim
     - pimcommon
