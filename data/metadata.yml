@@ -72,6 +72,10 @@ frameworks:
     - plasma-framework
     - threadweaver
     - krunner
+    - kunitconversion
+    - kinit
+    - kded
+    - kdelibs4support
     - kcalcore
     - akonadi-search
     - libkdepim
