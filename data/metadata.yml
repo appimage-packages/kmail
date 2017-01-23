@@ -76,6 +76,7 @@ frameworks:
     - kinit
     - kded
     - kdelibs4support
+    - kemoticons
     - kcalcore
     - akonadi-search
     - libkdepim
