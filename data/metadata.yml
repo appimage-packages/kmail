@@ -1,4 +1,5 @@
 name: kmail
+binary: kmail
 packages:
   - build-essential
   #app specifc
