@@ -84,6 +84,7 @@ frameworks:
     - kpimtextedit
     - pimcommon
     - kdepim-apps-libs
+    - libgravatar
     - messagelib
 type: git
 url: http://anongit.kde.org/kmail
