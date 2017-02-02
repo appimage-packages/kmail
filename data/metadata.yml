@@ -81,7 +81,7 @@ frameworks:
     - kcalcore
     - akonadi-search
     - libkdepim
-    - pimtextedit
+    - kpimtextedit
     - pimcommon
     - kdepim-apps-libs
     - messagelib
