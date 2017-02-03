@@ -87,6 +87,7 @@ frameworks:
     - libgravatar
     - kidentitymanagement
     - kmailtransport
+    - kmbox
     - messagelib
 type: git
 url: http://anongit.kde.org/kmail
