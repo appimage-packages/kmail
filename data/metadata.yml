@@ -91,6 +91,7 @@ frameworks:
     - messagelib
     - knotifyconfig
     - kcalutils
+    - kontactinterface
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
