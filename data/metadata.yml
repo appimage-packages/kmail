@@ -89,6 +89,7 @@ frameworks:
     - kmailtransport
     - kmbox
     - messagelib
+    - knotifyconfig
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
