@@ -93,7 +93,7 @@ frameworks:
     - kcalutils
     - kontactinterface
     - libksieve
-    - kmailcommon
+    - mailcommon
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
