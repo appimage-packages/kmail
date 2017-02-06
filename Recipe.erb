@@ -35,7 +35,7 @@ cd /<%= name %>.AppDir
 
 #Move binary/desktop/icon into AppDir
 mv /opt/usr/bin/<%= binary %> .
-mv /opt/usr/share/applications/*<%= name %>*.desktop <%= name %>.desktop
+mv /opt/usr/share/applications/org.kde.<%= binary %>.desktop <%= binary %>.desktop
 cp /opt/usr/share/icons/hicolor/48x48/apps/*<%= name %>* .
 
 
@@ -125,8 +125,8 @@ export GST_PLUGIN_SCANNER=\$HERE/bin
 <%= binary %> $@
 EOF
 chmod +x AppRun
-mv <%= name %> ./usr/bin/
-cp <%= name %>.desktop ./usr/share/applications/
+mv <%= binary %> ./usr/bin/
+cp <%= binary %>.desktop ./usr/share/applications/
 cd /
 wget "https://github.com/probonopd/AppImageKit/releases/download/knowngood/appimagetool-x86_64.AppImage"
 chmod a+x appimagetool-x86_64.AppImage
