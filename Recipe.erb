@@ -62,7 +62,8 @@ update-mime-database ./usr/share/mime
 strip -g $(find ./usr/bin) || true
 strip -g $(find ./usr/lib) || true
 
-mv /opt/usr/libexec/kf5/* ./usr/bin/ || true
+mv /opt/usr/libexec/Qt* ./usr/bin/ || true
+mv /opt/usr/bin/kwallet ./usr/bin/ || true
 mv /opt/usr/lib/x86_64-linux-gnu/libexec/kf5/* ./usr/bin/ || true
 mv /opt/usr/libexec/gstreamer-1.0/* ./usr/bin || true
 cp -rfv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
