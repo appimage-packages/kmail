@@ -24,7 +24,8 @@ node('linux') {
 
 
     currentBuild.result = "SUCCESS"
-    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '2')), disableConcurrentBuilds(), pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/15 * * * *')])])
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')), disableConcurrentBuilds(), \
+    [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/appimage-packages/kmail/'], pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/15 * * * *')])])
 
     try {
 
@@ -34,8 +35,8 @@ node('linux') {
             browser: [$class: 'GithubWeb', repoUrl: ''], doGenerateSubmoduleConfigurations: false, \
             extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'appimage-template']], submoduleCfg: [], \
             userRemoteConfigs: [[url: 'https://github.com/appimage-packages/appimage-template']]]
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
-            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kmail']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/kmail']]])
+            checkout changelog: true, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
+            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kmail']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/kmail']]]
        }
         stage( 'Setup' ) {
             sh 'bundle install'

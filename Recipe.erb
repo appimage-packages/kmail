@@ -95,7 +95,7 @@ rm -rf ./usr/share/doc/ECM || true
 rm -rf ./usr/share/doc/libdbusmenu-qt5-doc || true
 rm -rf ./usr/share/gtk-doc || true
 rm -rf ./usr/share/wallpapers || true
-ls /opt/usr/lib/libg*
+
 find . -name '*.a' -exec rm {} \;
 get_desktopintegration <%= name %>
 cd /app/src
@@ -116,10 +116,10 @@ export LD_PRELOAD=\$HERE/exec_wrapper.so
 export QML2_IMPORT_PATH=\$HERE/qml
 export QT_PLUGIN_PATH=\$HERE/plugins
 export PATH=\$HERE/usr/bin/:\$HERE/usr/sbin/:\$HERE/usr/games/:\$HERE/bin/:\$HERE/sbin/:$PATH
-export LD_LIBRARY_PATH=\$HERE/usr/lib/:\$HERE/usr/lib/x86_64-linux-gnu/:\$HERE/usr/lib64/:\$HERE/lib/:\$HERE/lib/x86_64-linux-gnu/:\$HERE/lib64/:$LD_LIBRARY_PATH
-export XDG_DATA_DIRS=\$HERE/usr/share:\$HOME/.local/share:/usr/local/share/:/usr/share:$XDG_DATA_DIRS
+export LD_LIBRARY_PATH=\$HERE/usr/lib/:\$HERE/usr/lib/x86_64-linux-gnu/:\$HERE/usr/lib64/:\$HERE/lib/:\$HERE/lib/x86_64-linux-gnu/:\$HERE/lib64/:\$LD_LIBRARY_PATH
+export XDG_DATA_DIRS=\$HERE/usr/share:\$HOME/.local/share:/usr/local/share/:/usr/share:\$XDG_DATA_DIRS
 export XDG_DATA_HOME=\$HOME/.local/share
-export XDG_CONFIG_DIRS=\$HERE/etc/xdg:$XDG_CONFIG_DIRS
+export XDG_CONFIG_DIRS=\$HERE/etc/xdg:\$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
@@ -135,8 +135,8 @@ chmod a+x appimagetool-x86_64.AppImage
 
 ARCH=$(arch)
 DATE=$(date +"%Y%m%d")
-
-APPIMAGEFILENAME="<%= name %>-git$DATE-$ARCH.AppImage"
+TIME=$(time)
+APPIMAGEFILENAME="<%= name %>-git$DATE-$ARCH-$TIME.AppImage"
 
 #Re set LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/opt/usr/lib:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64
