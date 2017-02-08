@@ -60,6 +60,7 @@ frameworks:
     - kcontacts
     - akonadi-contacts
     - grantleetheme
+    - kpimtextedit
     - libkleo
     - kimap
     - kpackage
@@ -80,7 +81,6 @@ frameworks:
     - kcalcore
     - akonadi-search
     - libkdepim
-    - kpimtextedit
     - pimcommon
     - kdepim-apps-libs
     - libgravatar
