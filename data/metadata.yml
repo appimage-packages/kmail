@@ -60,6 +60,7 @@ frameworks:
     - kcontacts
     - akonadi-contacts
     - grantleetheme
+    - kemoticons
     - kpimtextedit
     - libkleo
     - kimap
@@ -77,7 +78,6 @@ frameworks:
     - kinit
     - kded
     - kdelibs4support
-    - kemoticons
     - kcalcore
     - akonadi-search
     - libkdepim
