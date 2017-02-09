@@ -10,7 +10,7 @@ packages:
   - unzip
   - libical-dev
   - libxapian-dev
-  - mysql-server-core-5.7
+  - mysql-server-core-5.6
 frameworks:
   build_kf5: true
   frameworks:
