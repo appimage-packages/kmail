@@ -52,6 +52,7 @@ rsync -aruxv --progress /opt/usr/resources/ ./usr/bin
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
 ls /opt/usr/lib/libg*
 cp /opt/usr/bin/gst* ./usr/bin/
+mv /opt/usr/bin/akonadi* ./usr/bin/
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
 cp /opt/usr/lib/gstreamer-1.0/* ./lib/
