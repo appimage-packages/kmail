@@ -137,8 +137,7 @@ chmod a+x appimagetool-x86_64.AppImage
 
 ARCH=$(arch)
 DATE=$(date +"%Y%m%d")
-TIME=$(date -u +"%T")
-APPIMAGEFILENAME="<%= name %>-git$DATE-$ARCH-$TIME.AppImage"
+APPIMAGEFILENAME="<%= name %>-git$DATE-$ARCH.AppImage"
 
 #Re set LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/opt/usr/lib:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64
