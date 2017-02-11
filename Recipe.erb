@@ -53,7 +53,7 @@ cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
 ls /opt/usr/lib/libg*
 cp /opt/usr/bin/gst* ./usr/bin/
 mv /opt/usr/bin/akonadi* ./usr/bin/
-mv /usr/sbin/mysqld ./usr/bin/
+mv /usr/sbin/mysqld* ./usr/bin/
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
 cp /opt/usr/lib/gstreamer-1.0/* ./lib/
@@ -125,7 +125,7 @@ export XDG_CONFIG_DIRS=\$HERE/.config:\$HERE/etc/xdg:\$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
-akonadictl start
+akonadiserver
 <%= binary %> $@
 EOF
 chmod +x AppRun

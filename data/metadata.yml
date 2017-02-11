@@ -99,7 +99,7 @@ frameworks:
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
-buildoptions: "-DCMAKE_INSTALL_PREFIX=/opt/usr -DKDE_INSTALL_SYSCONFDIR=/opt/etc -DBUILD_TESTING=OFF"
+buildoptions: "-DCMAKE_INSTALL_PREFIX=/opt/usr -DKDE_INSTALL_SYSCONFDIR=/opt/etc -DBUILD_TESTING=OFF -DMYSQLD_EXECUTABLE:STRING=/usr/sbin/mysqld-akonadi"
 dependencies:
   - cpan:
       build:
