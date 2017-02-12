@@ -53,6 +53,7 @@ cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
 ls /opt/usr/lib/libg*
 cp /opt/usr/bin/gst* ./usr/bin/
 mv /opt/usr/bin/*akonadi* ./usr/bin/
+mv /opt/usr/bin/asapcat ./usr/bin/
 mv /usr/sbin/mysqld* ./usr/bin/
 cp /lib/x86_64-linux-gnu/libaio* ./usr/lib/
 cp -rfv /usr/share/mysql ./usr/share/
@@ -128,7 +129,7 @@ export XDG_CONFIG_DIRS=\$HERE/.config:\$HERE/etc/xdg:\$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
-./usr/bin/akonadictl start
+akonadictl start
 <%= binary %> $@
 EOF
 chmod +x AppRun
