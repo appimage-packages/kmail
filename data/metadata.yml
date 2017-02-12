@@ -99,7 +99,7 @@ frameworks:
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
-buildoptions: "-DCMAKE_INSTALL_PREFIX=/opt/usr -DKDE_INSTALL_SYSCONFDIR=/opt/etc -DBUILD_TESTING=OFF -DMYSQLD_EXECUTABLE:STRING='./usr/sbin/mysqld --lc-messages-dir=./usr/share/mysql --defaults-file=~/.local/share/akonadi/mysql.conf --datadir=~/.local/share/akonadi/db_data/ --socket=/tmp/akonadi-ppimage/mysql.socket --pid-file=/tmp/akonadi-appimage/mysql.pid'"
+buildoptions: "-DCMAKE_INSTALL_PREFIX=/opt/usr -DKDE_INSTALL_SYSCONFDIR=/opt/etc -DBUILD_TESTING=OFF"
 dependencies:
   - cpan:
       build:
@@ -109,11 +109,3 @@ dependencies:
       source:
         type: none
         url: ''
-  # - hack-font:
-  #     build:
-  #       buildsystem: custom
-  #       buildoptions: 'cp *.ttf /opt/usr/share/fonts/'
-  #     depname: 'hack-font'
-  #     source:
-  #       type: zip
-  #       url: 'https://github.com/chrissimpkins/Hack/releases/download/v2.020/Hack-v2_020-ttf.zip hack-font'
