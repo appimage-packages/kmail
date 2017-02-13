@@ -57,6 +57,7 @@ mv /opt/usr/bin/asapcat ./usr/bin/
 mv /usr/sbin/mysqld* ./usr/sbin/
 cp /lib/x86_64-linux-gnu/libaio* ./usr/lib/
 cp -rfv /usr/share/mysql ./usr/share/
+mkdir ./share/mysql
 ln -s ./usr/share/mysql/english/errmsg.sys ./share/mysql/errmsg.sys
 cp /in/mysql-akonadi ./usr/sbin/
 mkdir ./lib
