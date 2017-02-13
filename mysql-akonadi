@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec /usr/sbin/mysqld --socket==/tmp/akonadi-appimage/mysql.socket --defaults-file=~/.local/share/akonadi/mysql.conf --datadir=~/.local/share/akonadi/db_data/ --pid-file=/tmp/akonadi-appimage/mysql.pid
+exec ./usr/sbin/mysqld $@
