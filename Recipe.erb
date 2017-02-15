@@ -130,7 +130,7 @@ export XDG_CONFIG_DIRS=\$HERE/.config:\$HERE/etc/xdg:\$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
-mysqld --lc-messages-dir=\$HERE/usr/share/mysql/english --datadir=\$HOME/.local/share/akonadi --socket=\XDG_DATA_DIRS/akonadiserver-cmd.socket
+mysqld --lc-messages-dir=\$HERE/usr/share/mysql/english --datadir=\$XDG_DATA_HOME/akonadi --socket=\$XDG_DATA_HOME/akonadi/akonadiserver-cmd.socket
 akonadictl start
 <%= binary %> $@
 EOF
