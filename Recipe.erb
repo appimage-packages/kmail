@@ -52,7 +52,7 @@ rsync -aruxv --progress /opt/usr/resources/ ./usr/bin
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
 ls /opt/usr/lib/libg*
 cp /opt/usr/bin/gst* ./usr/bin/
-mv /opt/usr/bin/*akonadi* ./usr/bin/
+mv /opt/usr/bin/* ./usr/bin/
 mv /opt/usr/bin/asapcat ./usr/bin/
 mv /usr/sbin/mysqld* ./usr/sbin/
 cp /lib/x86_64-linux-gnu/libaio* ./usr/lib/
@@ -71,7 +71,6 @@ strip -g $(find ./usr/bin) || true
 strip -g $(find ./usr/lib) || true
 
 mv /opt/usr/libexec/Qt* ./usr/bin/ || true
-mv /opt/usr/bin/kwallet ./usr/bin/ || true
 mv /opt/usr/lib/x86_64-linux-gnu/libexec/kf5/* ./usr/bin/ || true
 mv /opt/usr/libexec/gstreamer-1.0/* ./usr/bin || true
 cp -rfv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
