@@ -66,6 +66,7 @@ cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
 update-mime-database ./usr/share/mime
+mysql_install_db –-user=mysql –ldata=/var/lib/mysql
 #mv /in/my.cnf /etc/mysql/
 strip -g $(find ./usr/bin) || true
 strip -g $(find ./usr/lib) || true
