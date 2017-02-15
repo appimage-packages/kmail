@@ -66,7 +66,7 @@ cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
 update-mime-database ./usr/share/mime
-mv /in/my.cnf /etc/mysql/
+#mv /in/my.cnf /etc/mysql/
 strip -g $(find ./usr/bin) || true
 strip -g $(find ./usr/lib) || true
 
@@ -131,6 +131,7 @@ export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
 mysqld --lc-messages-dir=\$HERE/usr/share/mysql/english --datadir=\$HOME/.local/share/akonadi
+akonadictl start
 <%= binary %> $@
 EOF
 chmod +x AppRun
@@ -147,6 +148,6 @@ APPIMAGEFILENAME="<%= name %>-git$DATE-$TIME-$ARCH.AppImage"
 
 #Re set LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/opt/usr/lib:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64
-gpg2 --import /root/.gnupg/appimage.key
+#gpg2 --import /root/.gnupg/appimage.key
 ./appimagetool-x86_64.AppImage -v -s -u "zsync|https://s3-eu-central-1.amazonaws.com/ds9-apps/<%= name %>-master-appimage/kmail_latestversion.zsync" /<%= name %>.AppDir /appimage/$APPIMAGEFILENAME
 zsyncmake -u "https://s3-eu-central-1.amazonaws.com/ds9-apps/<%= name %>-master-appimage/$APPIMAGEFILENAME" -o /appimage/<%= name %>_latestversion.zsync /appimage/$APPIMAGEFILENAME
