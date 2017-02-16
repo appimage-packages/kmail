@@ -60,7 +60,7 @@ mv /usr/sbin/mysqld* ./usr/sbin/
 cp /lib/x86_64-linux-gnu/libaio* ./usr/lib/
 cp -rfv /usr/share/mysql ./usr/share/
 
-mv mysql-akonadi ./usr/sbin/
+mv $WORKSPACE/mysqld-akonadi ./usr/sbin/
 chmod +x ./usr/sbin/mysqld-akonadi
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
