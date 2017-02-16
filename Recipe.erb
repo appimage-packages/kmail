@@ -63,6 +63,7 @@ cp -rfv /usr/share/mysql ./usr/share/
 
 mv /in/mysqld-akonadi ./usr/sbin/
 chmod +x ./usr/sbin/mysqld-akonadi
+mv /in/mysql-global.conf ./etc/xdg/akonadi/
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
 cp /opt/usr/lib/gstreamer-1.0/* ./lib/
@@ -135,7 +136,7 @@ export XDG_CONFIG_DIRS=\$HERE/.config:\$HERE/etc/xdg:\$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
-echo "secure_file_priv=" >> \$HOME/.local/share/akonadi/mysql.conf
+
 <%= binary %> $@
 EOF
 chmod +x AppRun
