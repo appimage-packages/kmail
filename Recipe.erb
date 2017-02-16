@@ -134,7 +134,7 @@ export XDG_CONFIG_DIRS=\$HERE/.config:\$HERE/etc/xdg:\$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
-
+echo "secure_file_priv=" >> \$HOME/.local/share/akonadi/mysql.conf
 <%= binary %> $@
 EOF
 chmod +x AppRun
