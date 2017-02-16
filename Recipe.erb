@@ -106,6 +106,8 @@ rm -rf ./usr/share/gtk-doc || true
 rm -rf ./usr/share/wallpapers || true
 
 find . -name '*.a' -exec rm {} \;
+#Add back libkrb5
+cp /usr/lib/x86_64-linux-gnu/libkrb5* ./lib/
 get_desktopintegration <%= name %>
 cd /app/src
 git clone git://anongit.kde.org/scratch/brauch/appimage-exec-wrapper
