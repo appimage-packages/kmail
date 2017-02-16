@@ -61,6 +61,7 @@ cp /lib/x86_64-linux-gnu/libaio* ./usr/lib/
 cp -rfv /usr/share/mysql ./usr/share/
 
 cp /in/mysql-akonadi ./usr/sbin/
+chmod +x ./usr/sbin/mysqld-akonadi
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
 cp /opt/usr/lib/gstreamer-1.0/* ./lib/
@@ -69,7 +70,6 @@ cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
 update-mime-database ./usr/share/mime
 
-#mv /in/my.cnf /etc/mysql/
 strip -g $(find ./usr/bin) || true
 strip -g $(find ./usr/lib) || true
 
@@ -134,7 +134,8 @@ export XDG_CONFIG_DIRS=\$HERE/.config:\$HERE/etc/xdg:\$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
-
+mysqld --initialize
+akonadictl start
 <%= binary %> $@
 EOF
 chmod +x AppRun
