@@ -99,6 +99,7 @@ frameworks:
     - kdav
     - kholidays
     - kalarmcal
+    - akonadi-calendar
     - kdepim-runtime
 type: git
 url: http://anongit.kde.org/kmail
