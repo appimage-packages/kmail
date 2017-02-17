@@ -102,6 +102,7 @@ frameworks:
     - akonadi-calendar
     - kdepim-runtime
     - kdiagram
+    - calendarsupport
     - incidenceeditor
     - kdepim-addons
 type: git
