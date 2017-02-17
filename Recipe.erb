@@ -53,7 +53,7 @@ rsync -aruxv --progress /opt/etc/ ./etc/
 rsync -aruxv --progress /opt/usr/qml/ ./qml
 rsync -aruxv --progress /opt/usr/resources/ ./usr/bin
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
-ls /opt/usr/lib/libg*
+mv /opt/usr/lib/x86_64-linux-gnu/libkwalletbackend5.so* ./lib/
 cp /opt/usr/bin/gst* ./usr/bin/
 mv /opt/usr/bin/*akonadi* ./usr/bin/
 mv /opt/usr/bin/msg* ./usr/bin/
