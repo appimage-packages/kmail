@@ -95,6 +95,7 @@ frameworks:
     - mailimporter
     - mailcommon
     - ktnef
+    - kdepim-runtime
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
