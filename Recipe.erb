@@ -46,6 +46,7 @@ mkdir -p ./usr/{share,bin,sbin,lib}
 mkdir ./etc
 mv /opt/usr/plugins/akonadi/*  ./plugins/
 mv /opt/usr/plugins/kf5/kio/* ./plugins/
+mv /opt/usr/plugins/messageviewer/* ./plugins/
 rsync -aruxv --progress /opt/usr/plugins/ ./plugins/
 rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
