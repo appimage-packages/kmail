@@ -101,7 +101,7 @@ frameworks:
     - kalarmcal
     - akonadi-calendar
     - kdepim-runtime
-    - incidence-editor
+    - incidenceeditor
     - kdepim-addons
 type: git
 url: http://anongit.kde.org/kmail
