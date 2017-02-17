@@ -47,13 +47,14 @@ mkdir ./etc
 mv /opt/usr/plugins/akonadi/*  ./plugins/
 mv /opt/usr/plugins/kf5/kio/* ./plugins/
 mv /opt/usr/plugins/messageviewer/* ./plugins/
+mv /opt/usr/lib/x86_64-linux-gnu/grantlee/5.1/kde_grantlee_plugin.so ./plugins/
 rsync -aruxv --progress /opt/usr/plugins/ ./plugins/
 rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
 rsync -aruxv --progress /opt/usr/qml/ ./qml
 rsync -aruxv --progress /opt/usr/resources/ ./usr/bin
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
-mv /opt/usr/lib/x86_64-linux-gnu/libkwalletbackend5.so* ./lib/
+
 cp /opt/usr/bin/gst* ./usr/bin/
 mv /opt/usr/bin/*akonadi* ./usr/bin/
 mv /opt/usr/bin/msg* ./usr/bin/
@@ -75,6 +76,7 @@ mv /opt/usr/lib/x86_64-linux-gnu/libakonadi-singlefileresource.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libmaildir.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libKPimKDAV.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libKF5AkonadiCalendar.so* ./lib/
+mv /opt/usr/lib/x86_64-linux-gnu/libkwalletbackend5.so* ./lib/
 
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
