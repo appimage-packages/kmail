@@ -45,6 +45,7 @@ mkdir -p ./plugins; cp -rfv /opt/usr/lib/qt5/plugins/phonon4qt5_backend $_
 mkdir -p ./usr/{share,bin,sbin,lib}
 mkdir ./etc
 mv /opt/usr/plugins/akonadi/*  ./plugins/
+mv /opt/usr/plugins/kf5/kio/* ./plugins/
 rsync -aruxv --progress /opt/usr/plugins/ ./plugins/
 rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
@@ -67,6 +68,10 @@ mv /in/mysql-global.conf ./etc/xdg/akonadi/
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
 cp /opt/usr/lib/gstreamer-1.0/* ./lib/
+mv /opt/usr/lib/x86_64-linux-gnu/libfolderarchivesettings.so* ./bin/
+mv /opt/usr/lib/x86_64-linux-gnu/libkmindexreader.so* ./bin/
+mv /opt/usr/lib/x86_64-linux-gnu/libakonadi-singlefileresource.so* ./bin/
+mv /opt/usr/lib/x86_64-linux-gnu/libmaildir.so* ./bin/
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
