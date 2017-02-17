@@ -101,6 +101,7 @@ frameworks:
     - kalarmcal
     - akonadi-calendar
     - kdepim-runtime
+    - kdiagram
     - incidenceeditor
     - kdepim-addons
 type: git
