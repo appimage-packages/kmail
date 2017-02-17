@@ -103,6 +103,7 @@ frameworks:
     - kdepim-runtime
     - kdiagram
     - calendarsupport
+    - eventviews
     - incidenceeditor
     - kdepim-addons
 type: git
