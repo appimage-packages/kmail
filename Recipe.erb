@@ -47,6 +47,7 @@ mkdir ./etc
 #mv /opt/usr/plugins/akonadi/*  ./plugins/
 #mv /opt/usr/plugins/kf5/kio/* ./plugins/
 mv /opt/usr/lib/x86_64-linux-gnu/grantlee/5.1/kde_grantlee_plugin.so ./plugins/
+mv /opt/usr/lib/grantlee/5.1/grantlee_* ./plugins/
 rsync -aruxv --progress /opt/usr/plugins/ ./plugins/
 rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
@@ -76,7 +77,6 @@ mv /opt/usr/lib/x86_64-linux-gnu/libakonadi-singlefileresource.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libmaildir.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libKPimKDAV.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libkwalletbackend5.so* ./lib/
-mv /opt/usr/lib/grantlee/5.1/grantlee_* ./lib/
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
