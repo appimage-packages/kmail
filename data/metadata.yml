@@ -97,8 +97,8 @@ frameworks:
     - ktnef
     - kross
     - kdav
-    - kalarmcal
     - kholidays
+    - kalarmcal
     - kdepim-runtime
 type: git
 url: http://anongit.kde.org/kmail
