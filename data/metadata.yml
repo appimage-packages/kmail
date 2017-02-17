@@ -95,6 +95,7 @@ frameworks:
     - mailimporter
     - mailcommon
     - ktnef
+    - kross
     - kdepim-runtime
 type: git
 url: http://anongit.kde.org/kmail
