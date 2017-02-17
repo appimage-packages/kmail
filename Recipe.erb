@@ -76,7 +76,7 @@ mv /opt/usr/lib/x86_64-linux-gnu/libakonadi-singlefileresource.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libmaildir.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libKPimKDAV.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libkwalletbackend5.so* ./lib/
-
+mv /opt/usr/lib/grantlee/5.1/grantlee_* ./lib/
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
@@ -87,6 +87,7 @@ strip -g $(find ./usr/lib) || true
 
 mv /opt/usr/libexec/Qt* ./usr/bin/ || true
 mv /opt/usr/lib/x86_64-linux-gnu/libexec/kf5/* ./usr/bin/ || true
+mv /opt/usr/lib/x86_64-linux-gnu/libexec/kf5/
 mv /opt/usr/libexec/gstreamer-1.0/* ./usr/bin || true
 cp -rfv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
 unset LD_LIBRARY_PATH
@@ -144,6 +145,7 @@ export XDG_DATA_DIRS=\$HERE/usr/share:\$HOME/.local/share:\$HERE/share:/usr/loca
 export XDG_DATA_HOME=\$HOME/.local/share
 export XDG_CONFIG_DIRS=\$HERE/.config:\$HERE/etc/xdg:\$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
+export KF5_LIBEXEC_DIR=\$HERE/usr/bin
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
 
