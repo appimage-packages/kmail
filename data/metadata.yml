@@ -100,6 +100,7 @@ frameworks:
     - kholidays
     - kalarmcal
     - akonadi-calendar
+    - libkgapi
     - kdepim-runtime
     - kdiagram
     - calendarsupport
@@ -119,3 +120,27 @@ dependencies:
       source:
         type: none
         url: ''
+  - libkolabxml:
+      build:
+        buildsystem: cmake
+        buildoptions: ''
+      depname: libkolabxml
+      source:
+        type: git
+        url: 'https://git.kolab.org/diffusion/LKX/libkolabxml.git'
+  - libcalendaring:
+      build:
+        buildsystem: cmake
+        buildoptions: ''
+      depname: libcalendaring
+      source:
+        type: git
+        url: 'https://git.kolab.org/diffusion/LC/libcalendaring.git'
+  - libkolab:
+      build:
+        buildsystem: cmake
+        buildoptions: ''
+      depname: libkolab
+      source:
+        type: git
+        url: 'https://git.kolab.org/diffusion/LK/libkolab.git'
