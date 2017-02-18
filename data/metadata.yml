@@ -135,7 +135,7 @@ kf5_deps:
   - libkolab:
       build:
         buildsystem: cmake
-        buildoptions: '-DQT5_BUILD=TRUE'
+        buildoptions: '-DUSE_LIBCALENDARING=FALSE'
       depname: libkolab
       source:
         type: git
@@ -149,3 +149,4 @@ kf5_deps:
       source:
         type: git
         url: 'https://anongit.kde.org/kdepim-runtime'
+        branch: 'master'
