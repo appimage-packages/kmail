@@ -10,6 +10,9 @@ packages:
   - unzip
   - libical-dev
   - libxapian-dev
+  - xsdcxx
+  - libxerces-c-dev
+  - curl
 frameworks:
   build_kf5: true
   frameworks:
