@@ -140,7 +140,7 @@ kf5_deps:
       source:
         type: git
         url: 'https://git.kolab.org/diffusion/LK/libkolab.git'
-        branch: 'libkolab-1.0'
+        branch: 'libkolab-1.0.2'
   - kdepim-runtime:
       build:
         buildsystem: cmake
