@@ -131,6 +131,7 @@ kf5_deps:
       source:
         type: git
         url: 'https://git.kolab.org/diffusion/LKX/libkolabxml.git'
+        branch: 'libkolabxml-1.1'
   - libcalendaring:
       build:
         buildsystem: cmake
@@ -147,6 +148,7 @@ kf5_deps:
       source:
         type: git
         url: 'https://git.kolab.org/diffusion/LK/libkolab.git'
+        branch: 'libkolab-1.0'
   - kdepim-runtime:
       build:
         buildsystem: cmake
