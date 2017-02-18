@@ -132,14 +132,6 @@ kf5_deps:
         type: git
         url: 'https://git.kolab.org/diffusion/LKX/libkolabxml.git'
         branch: 'libkolabxml-1.1'
-  - libcalendaring:
-      build:
-        buildsystem: cmake
-        buildoptions: '-DQT5_BUILD=TRUE'
-      depname: libcalendaring
-      source:
-        type: git
-        url: 'https://git.kolab.org/diffusion/LC/libcalendaring.git'
   - libkolab:
       build:
         buildsystem: cmake
