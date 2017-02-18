@@ -126,7 +126,7 @@ dependencies:
   - libkolabxml:
       build:
         buildsystem: cmake
-        buildoptions: ''
+        buildoptions: '-DQT5_BUILD=TRUE'
       depname: libkolabxml
       source:
         type: git
@@ -134,7 +134,7 @@ dependencies:
   - libcalendaring:
       build:
         buildsystem: cmake
-        buildoptions: ''
+        buildoptions: '-DQT5_BUILD=TRUE'
       depname: libcalendaring
       source:
         type: git
@@ -142,7 +142,7 @@ dependencies:
   - libkolab:
       build:
         buildsystem: cmake
-        buildoptions: ''
+        buildoptions: '-DQT5_BUILD=TRUE'
       depname: libkolab
       source:
         type: git
