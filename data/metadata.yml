@@ -104,7 +104,6 @@ frameworks:
     - kalarmcal
     - akonadi-calendar
     - libkgapi
-    - kdepim-runtime
     - kdiagram
     - calendarsupport
     - eventviews
@@ -123,6 +122,7 @@ dependencies:
       source:
         type: none
         url: ''
+kf5_deps:
   - libkolabxml:
       build:
         buildsystem: cmake
@@ -147,3 +147,11 @@ dependencies:
       source:
         type: git
         url: 'https://git.kolab.org/diffusion/LK/libkolab.git'
+  - kdepim-runtime:
+      build:
+        buildsystem: cmake
+        buildoptions: ''
+      depname: kdepim-runtime
+      source:
+        type: git
+        url: 'https://anongit.kde.org/kdepim-runtime'
