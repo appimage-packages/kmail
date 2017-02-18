@@ -126,7 +126,7 @@ kf5_deps:
   - libkolabxml:
       build:
         buildsystem: cmake
-        buildoptions: '-DQT5_BUILD=TRUE'
+        buildoptions: '-DQT5_BUILD=TRUE -DBUILD_TESTS=FALSE -DPHP_BINDINGS=ON -DPYTHON_BINDINGS=ON'
       depname: libkolabxml
       source:
         type: git
