@@ -12,7 +12,7 @@ packages:
   - libxapian-dev
   - xsdcxx
   - libxerces-c-dev
-  - curl
+  - libcurl4-openssl-dev
 frameworks:
   build_kf5: true
   frameworks:
