@@ -109,6 +109,7 @@ frameworks:
     - eventviews
     - incidenceeditor
     - kdepim-addons
+    - ktexteditor
     - kmail-account-wizard
 type: git
 url: http://anongit.kde.org/kmail
