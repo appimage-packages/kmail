@@ -109,6 +109,7 @@ frameworks:
     - eventviews
     - incidenceeditor
     - kdepim-addons
+    - kmail-account-wizard
 type: git
 url: http://anongit.kde.org/kmail
 buildsystem: cmake
@@ -126,7 +127,7 @@ kf5_deps:
   - libkolabxml:
       build:
         buildsystem: cmake
-        buildoptions: '-DQT5_BUILD=TRUE -DBUILD_TESTS=FALSE -DPHP_BINDINGS=ON -DPYTHON_BINDINGS=ON'
+        buildoptions: '-DCMAKE_INSTALL_PREFIX=/opt/usr -DQT5_BUILD=TRUE -DBUILD_TESTS=FALSE -DPHP_BINDINGS=ON -DPYTHON_BINDINGS=ON'
       depname: libkolabxml
       source:
         type: git
@@ -135,7 +136,7 @@ kf5_deps:
   - libkolab:
       build:
         buildsystem: cmake
-        buildoptions: '-DUSE_LIBCALENDARING=FALSE'
+        buildoptions: '-DCMAKE_INSTALL_PREFIX=/opt/usr'
       depname: libkolab
       source:
         type: git
