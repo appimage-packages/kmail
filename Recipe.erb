@@ -46,7 +46,7 @@ mkdir -p ./usr/{share,bin,sbin,lib}
 mkdir ./etc
 #mv /opt/usr/plugins/akonadi/*  ./plugins/
 #mv /opt/usr/plugins/kf5/kio/* ./plugins/
-mv /opt/usr/lib/x86_64-linux-gnu/grantlee/5.1/kde_grantlee_plugin.so ./plugins/
+mv /opt/usr/lib/x86_64-linux-gnu/grantlee ./plugins/
 rsync -aruxv --progress /opt/usr/plugins/ ./plugins/
 rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
@@ -73,7 +73,6 @@ mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
 cp /opt/usr/lib/gstreamer-1.0/* ./lib/
 mkdir -p ./usr/share/mimetreeparser/themes/default/
-mv /opt/usr/lib/grantlee/5.1/* ./usr/share/mimetreeparser/themes/default/
 mv /opt/usr/lib/x86_64-linux-gnu/libfolderarchivesettings.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libkmindexreader.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libakonadi-singlefileresource.so* ./lib/
