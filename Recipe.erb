@@ -72,7 +72,7 @@ mv /in/mysql-global.conf ./etc/xdg/akonadi/
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
 cp /opt/usr/lib/gstreamer-1.0/* ./lib/
-mkdir -p ./usr/share/mimetreeparser/themes/default; cp/opt/usr/lib/grantlee/5.1/grantlee_* $_
+mkdir -p ./usr/share/mimetreeparser/themes/default; cp /opt/usr/lib/grantlee/5.1/grantlee_* $_
 cp -rfv /opt/usr/lib/x86_64-linux-gnu/grantlee ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libfolderarchivesettings.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libkmindexreader.so* ./lib/
@@ -81,6 +81,7 @@ mv /opt/usr/lib/x86_64-linux-gnu/libmaildir.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libKPimKDAV.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libkwalletbackend5.so* ./lib/
 cp /opt/usr/lib/x86_64-linux-gnu/libKPimGAPICore.so* ./lib/
+mv  /opt/usr/lib/grantlee ./lib/
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
