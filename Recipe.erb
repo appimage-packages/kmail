@@ -155,16 +155,7 @@ export GST_PLUGIN_SCANNER=\$HERE/bin
 
 <%= binary %> $@
 
-shutdown() {
-  # Get our process group id
-  PGID=$(ps -o pgid= $$ | grep -o [0-9]*)
-
-  # Kill it in a new new process group
-  setsid kill -- -$PGID
-  exit 0
-}
-
-trap "shutdown" INT SIGTERM
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
 EOF
 chmod +x AppRun
