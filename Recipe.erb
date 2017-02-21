@@ -46,12 +46,13 @@ mkdir -p ./usr/{share,bin,sbin,lib}
 mkdir ./etc
 #mv /opt/usr/plugins/akonadi/*  ./plugins/
 #mv /opt/usr/plugins/kf5/kio/* ./plugins/
-cp -rfv /opt/usr/lib/x86_64-linux-gnu/grantlee ./plugins/
+cp -rfv /opt/usr/lib/grantlee ./plugins/
 rsync -aruxv --progress /opt/usr/plugins/ ./plugins/
 rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
-rsync -aruxv --progress /opt/usr/qml/ ./qml
-rsync -aruxv --progress /opt/usr/resources/ ./usr/bin
+rsync -aruxv --progress /opt/usr/qml/ ./qml/
+rsync -aruxv --progress /opt/usr/resources/ ./usr/bin/
+rsync -aruxv --progress /opt/usr/translations/ ./usr/bin/
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
 
 cp /opt/usr/bin/gst* ./usr/bin/
@@ -72,8 +73,6 @@ mv /in/mysql-global.conf ./etc/xdg/akonadi/
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
 cp /opt/usr/lib/gstreamer-1.0/* ./lib/
-mkdir -p ./usr/share/mimetreeparser/themes/default; cp -rfv /opt/usr/lib/grantlee $_
-cp -rfv /opt/usr/lib/grantlee ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libfolderarchivesettings.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libkmindexreader.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libakonadi-singlefileresource.so* ./lib/
@@ -81,7 +80,6 @@ mv /opt/usr/lib/x86_64-linux-gnu/libmaildir.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libKPimKDAV.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libkwalletbackend5.so* ./lib/
 cp /opt/usr/lib/x86_64-linux-gnu/libKPimGAPICore.so* ./lib/
-cp -rfv  /opt/usr/lib/grantlee ./lib/
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
@@ -143,6 +141,7 @@ HERE="\`( cd \"\$DIR\" && pwd )\`"
 export LD_PRELOAD=\$HERE/exec_wrapper.so
 export QML2_IMPORT_PATH=\$HERE/qml
 export QT_PLUGIN_PATH=\$HERE/plugins
+export GRANTLEE_PLUGIN_PATH=\$HERE/plugins
 export PATH=\$HERE/usr/bin/:\$HERE/usr/sbin/:\$HERE/usr/games/:\$HERE/bin/:\$HERE/sbin/:\$PATH
 export LD_LIBRARY_PATH=\$HERE/usr/lib/:\$HERE/usr/lib/x86_64-linux-gnu/:\$HERE/usr/lib64/:\$HERE/lib/:\$HERE/lib/x86_64-linux-gnu/:\$HERE/lib64/:\$LD_LIBRARY_PATH
 export XDG_DATA_DIRS=\$HERE/usr/share:\$HOME/.local/share:\$HERE/share:/usr/local/share/:/usr/share:\$XDG_DATA_DIRS
@@ -154,6 +153,17 @@ export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
 
 <%= binary %> $@
+
+shutdown() {
+  # Get our process group id
+  PGID=$(ps -o pgid= $$ | grep -o [0-9]*)
+
+  # Kill it in a new new process group
+  setsid kill -- -$PGID
+  exit 0
+}
+
+trap "shutdown" SIGINT SIGTERM
 EOF
 chmod +x AppRun
 mv <%= binary %> ./usr/bin/
