@@ -153,7 +153,7 @@ export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
 
 <%= binary %> $@
-
+akonadictl stop
 shutdown() {
   # Get our process group id
   PGID=$(ps -o pgid= $$ | grep -o [0-9]*)
@@ -164,6 +164,7 @@ shutdown() {
 }
 
 trap "shutdown" SIGINT SIGTERM
+
 EOF
 chmod +x AppRun
 mv <%= binary %> ./usr/bin/
