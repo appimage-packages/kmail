@@ -47,6 +47,7 @@ mkdir ./etc
 #mv /opt/usr/plugins/akonadi/*  ./plugins/
 #mv /opt/usr/plugins/kf5/kio/* ./plugins/
 cp -rfv /opt/usr/lib/grantlee ./plugins/
+cp /opt/usr/lib/x86_64-linux-gnu/grantlee/5.1/*  ./plugins/grantlee/5.1/
 rsync -aruxv --progress /opt/usr/plugins/ ./plugins/
 rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
