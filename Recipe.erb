@@ -152,10 +152,12 @@ export KDE_FORK_SLAVES=1
 export KF5_LIBEXEC_DIR=\$HERE/usr/bin
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
-mysqld-akonadi
+
+
 <%= binary %> $@
 
-trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+PGID=ps -o pgid,comm | grep <%= binary %>
+trap "trap - SIGTERM && kill -- -$PGID" SIGINT SIGTERM EXIT
 
 EOF
 chmod +x AppRun
