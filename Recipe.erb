@@ -136,7 +136,7 @@ cd /<%= name %>.AppDir
 rm AppRun
 #Create AppRun
 cat > AppRun << EOF
-#!/bin/sh
+#!/bin/bash
 DIR="\`dirname \"\$0\"\`"
 HERE="\`( cd \"\$DIR\" && pwd )\`"
 export LD_PRELOAD=\$HERE/exec_wrapper.so
