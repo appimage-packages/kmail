@@ -156,7 +156,7 @@ export GST_PLUGIN_SCANNER=\$HERE/bin
 
 <%= binary %> $@
 
-PGID=ps -o pgid,comm | grep <%= binary %>
+PGID=ps -o pgid,comm | grep mysqld
 trap "trap - SIGTERM && kill -- -$PGID" SIGINT SIGTERM EXIT
 
 EOF
