@@ -86,15 +86,13 @@ cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
 update-mime-database ./usr/share/mime
 
-strip -g $(find . -type f -exec file {} \;) || true
-find . -type f -exec file {} \; | grep "not stripped"
 mv /opt/usr/libexec/Qt* ./usr/bin/ || true
 mv /opt/usr/lib/x86_64-linux-gnu/libexec/kf5/* ./usr/bin/ || true
 mv /opt/usr/libexec/gstreamer-1.0/* ./usr/bin || true
 cp -rfv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
 unset LD_LIBRARY_PATH
 ../linuxdeployqt-1-x86_64.AppImage <%= name %> -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
-ls ./qml/
+
 patch_usr
 glibc_needed
 delete_blacklisted
@@ -119,8 +117,18 @@ rm -rf ./usr/share/doc/ECM || true
 rm -rf ./usr/share/doc/libdbusmenu-qt5-doc || true
 rm -rf ./usr/share/gtk-doc || true
 rm -rf ./usr/share/wallpapers || true
-
+rm -rf ./usr/share/aclocal || true
+rm -rf ./usr/share/bash-completion || true
+rm -rf ./usr/share/common-lisp || true
+rm -rf ./usr/share/cups || true
+rm -rf ./usr/share/doc/{cups,gettext,gnupg,libasprintf,pcre} || true
+rm -rf ./usr/share/gir-1.0 || true
+rm -rf ./usr/share/gnupg || true
+rm -rf ./usr/share/gobject-introspection-1.0 || true
+rm -rf ./usr/share/util-macros || true
 find . -name '*.a' -exec rm {} \;
+strip -g $(find . -type f -exec) || true
+find . -type f -exec file {} \; | grep "not stripped"
 #Add back libkrb5
 cp /usr/lib/x86_64-linux-gnu/libkrb5* ./lib/
 get_desktopintegration <%= name %>
