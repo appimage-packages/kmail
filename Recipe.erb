@@ -155,9 +155,9 @@ export GST_PLUGIN_SCANNER=\$HERE/bin
 
 
 <%= binary %> $@
-
+ps -o pid,pgid,comm
 trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
-\$HERE/usr/bin/akonadictl stop
+
 EOF
 chmod +x AppRun
 mv <%= binary %> ./usr/bin/
