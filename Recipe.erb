@@ -86,9 +86,8 @@ cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
 update-mime-database ./usr/share/mime
 
-strip -g $(find ./usr/bin) || true
-strip -g $(find ./usr/lib) || true
-
+strip -g $(find . -type f -exec file {} \;) || true
+find . -type f -exec file {} \; | grep "not stripped"
 mv /opt/usr/libexec/Qt* ./usr/bin/ || true
 mv /opt/usr/lib/x86_64-linux-gnu/libexec/kf5/* ./usr/bin/ || true
 mv /opt/usr/libexec/gstreamer-1.0/* ./usr/bin || true
@@ -156,7 +155,6 @@ export GST_PLUGIN_SCANNER=\$HERE/bin
 export AKONADI_DISABLE_AGENT_AUTOSTART
 akonadictl --instance kmail_appimage start
 export AKONADI_INSTANCE=kmail_appimage
-akonadiconsole
 
 <%= binary %> $@
 
@@ -174,8 +172,8 @@ chmod a+x appimagetool-x86_64.AppImage
 
 ARCH=$(arch)
 DATE=$(date +"%Y%m%d")
-TIME=$(date -u +"%T")
-APPIMAGEFILENAME="<%= name %>-git$DATE-$TIME-$ARCH.AppImage"
+
+APPIMAGEFILENAME="<%= name %>-git$DATE-$ARCH.AppImage"
 
 #Re set LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/opt/usr/lib:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64
