@@ -66,6 +66,8 @@ mv /opt/usr/bin/accountwizard ./usr/bin/
 mv /opt/usr/bin/ispdb ./usr/bin/
 mv /usr/sbin/mysqld* ./usr/sbin/
 cp /lib/x86_64-linux-gnu/libaio* ./usr/lib/
+cp /lib/x86_64-linux-gnu/libhcrypto* ./usr/lib/
+cp /lib/x86_64-linux-gnu/liblz4* ./usr/lib/
 cp -rfv /usr/share/mysql ./usr/share/
 
 mv /in/mysqld-akonadi ./usr/sbin/
@@ -161,12 +163,12 @@ export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
 
 export AKONADI_DISABLE_AGENT_AUTOSTART
-akonadictl --instance kmail_appimage start
+\$HERE/usr/bin/akonadictl --instance kmail_appimage start
 export AKONADI_INSTANCE=kmail_appimage
 
 <%= binary %> $@
 
-akonadictl --instance kmail_appimage stop
+\$HERE/usr/bin/akonadictl --instance kmail_appimage stop
 PGID=$(ps -o pid,pgid,comm | grep AppRun)
 trap "trap - SIGTERM && kill -- -$PGID" SIGINT SIGTERM EXIT
 
