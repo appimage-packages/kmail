@@ -64,10 +64,10 @@ cp /opt/usr/bin/k* ./usr/bin/
 mv /opt/usr/bin/asapcat ./usr/bin/
 mv /opt/usr/bin/accountwizard ./usr/bin/
 mv /opt/usr/bin/ispdb ./usr/bin/
-mv /usr/sbin/mysqld* ./usr/sbin/
+mv /usr/sbin/mysql* ./usr/sbin/
 cp /lib/x86_64-linux-gnu/libaio* ./usr/lib/
-cp /usr/lib/x86_64-linux-gnu/libhcrypto* ./usr/lib/
-cp /usr/lib/x86_64-linux-gnu/liblz4* ./usr/lib/
+cp /usr/lib/x86_64-linux-gnu/libhcrypto* ./lib/
+cp /usr/lib/x86_64-linux-gnu/liblz4* ./lib/
 cp -rfv /usr/share/mysql ./usr/share/
 
 mv /in/mysqld-akonadi ./usr/sbin/
@@ -130,7 +130,7 @@ rm -rf ./usr/share/gobject-introspection-1.0 || true
 rm -rf ./usr/share/util-macros || true
 find . -name '*.a' -exec rm {} \;
 strip -g $(find . -type f -exec) || true
-find . -type f -exec file {} \; | grep "not stripped"
+
 #Add back libkrb5
 cp /usr/lib/x86_64-linux-gnu/libkrb5* ./lib/
 get_desktopintegration <%= name %>
@@ -162,13 +162,15 @@ export KF5_LIBEXEC_DIR=\$HERE/usr/bin
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
 
+\$HERE/usr/bin/kwalletd
 export AKONADI_DISABLE_AGENT_AUTOSTART
 \$HERE/usr/bin/akonadictl --instance kmail_appimage start
 export AKONADI_INSTANCE=kmail_appimage
-
+\$HERE/usr/sbin/mysql --protocol=SOCKET --socket=~/.local/share/akonadi/instance/kmail_appimage/socket-$(hostname)/mysql.socket
 <%= binary %> $@
 
 \$HERE/usr/bin/akonadictl --instance kmail_appimage stop
+\$HERE/usr/sbin/mysqladmin --no-defaults --default-character-set=utf8 --socket=~/.local/share/akonadi/instance/kmail_appimage/socket-$(hostname)/mysql.socket shutdown
 PGID=$(ps -o pid,pgid,comm | grep AppRun)
 trap "trap - SIGTERM && kill -- -$PGID" SIGINT SIGTERM EXIT
 
