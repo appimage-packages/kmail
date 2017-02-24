@@ -65,9 +65,6 @@ mv /opt/usr/bin/asapcat ./usr/bin/
 mv /opt/usr/bin/accountwizard ./usr/bin/
 mv /opt/usr/bin/ispdb ./usr/bin/
 mv /usr/sbin/mysql* ./usr/sbin/
-cp /lib/x86_64-linux-gnu/libaio* ./usr/lib/
-cp /usr/lib/x86_64-linux-gnu/libhcrypto* ./lib/
-cp /usr/lib/x86_64-linux-gnu/liblz4* ./lib/
 cp -rfv /usr/share/mysql ./usr/share/
 
 mv /in/mysqld-akonadi ./usr/sbin/
@@ -84,6 +81,9 @@ mv /opt/usr/lib/x86_64-linux-gnu/libKPimKDAV.so* ./lib/
 mv /opt/usr/lib/x86_64-linux-gnu/libkwalletbackend5.so* ./lib/
 cp /opt/usr/lib/x86_64-linux-gnu/libKPimGAPICore.so* ./lib/
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./lib/
+cp /lib/x86_64-linux-gnu/libaio* ./lib/
+cp /usr/lib/x86_64-linux-gnu/libhcrypto* ./lib/
+cp /usr/lib/x86_64-linux-gnu/liblz4* ./lib/
 cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
 update-mime-database ./usr/share/mime
