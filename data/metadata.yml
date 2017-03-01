@@ -13,6 +13,7 @@ packages:
   - xsdcxx
   - libxerces-c-dev
   - libcurl4-openssl-dev
+  - mysql-client-5.7
 frameworks:
   build_kf5: true
   frameworks:
